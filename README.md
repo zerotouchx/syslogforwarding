@@ -23,97 +23,22 @@ that recipient.
 
 The following table shows the arguments for the options.
 
-+---------+---------------------------+-----------------------------------------------------------+
-| Option  | Description               | Values                                                    |
-+---------+---------------------------+-----------------------------------------------------------+
-| -number | Alert recipient index     | 1 through 12                                              |
-|         | number to display,        |                                                           |
-|         | add, modify, or delete    |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -status | Alert                     | On, off                                                   |
-+---------+---------------------------+-----------------------------------------------------------+
-| -type   | Alert type                | Email, syslog                                             |
-+---------+---------------------------+-----------------------------------------------------------+
-| -log    | Include event log in      | On, off                                                   |
-|         | alert email               |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -n      | Alert recipient name      | String                                                    |
-+---------+---------------------------+-----------------------------------------------------------+
-| -e      | Alert recipient email     | Valid email address                                       |
-|         | address                   |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -ip     | Syslog IP address or      | Valid IP address or hostname                              |
-|         | hostname                  |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -pn     | Syslog port number        | Valid port number                                         |
-+---------+---------------------------+-----------------------------------------------------------+
-| -del    | Delete specified          |                                                           |
-|         | recipient index           |                                                           |
-|         | number                    |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -test   | Generate a test alert to  |                                                           |
-|         | specified recipient       |                                                           |
-|         | index number              |                                                           |
-+---------+---------------------------+-----------------------------------------------------------+
-| -crt    |                           | All, none, custom:te|vo|po|di|fa|cp|me|in|re|ot           |
-|         | Sets critical events that | Custom critical alert settings are specified using a pipe |
-|         | send alerts               | separated list of values of the form alertentries -crt    |
-|         |                           | custom:te|vo, where custom values are:                    |
-|         |                           | -  te: critical temperature threshold exceeded            |
-|         |                           | - vo: critical voltage threshold exceeded                 |
-|         |                           | - po: critical power failure                              |
-|         |                           | - di: hard disk drive failure                             |
-|         |                           | - fa: fan failure                                         |
-|         |                           | - cp: microprocessor failure                              |
-|         |                           | - me: memory failure                                      |
-|         |                           | - in: hardware incompatibility                            |
-|         |                           | - re: power redundancy failure                            |
-|         |                           | - ot: all other critical events                           |
-+---------+---------------------------+-----------------------------------------------------------+
+
+| Option  	| Description                                                     	| Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	|
+|---------	|-----------------------------------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| -number 	| Alert recipient index number to display, add, modify, or delete 	| 1 through 12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 	|
+| -status 	| Alert recipient status                                          	| On, off                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      	|
+| -type   	| Alert type                                                      	| Email, syslog                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	|
+| -log    	| Include event log in alert email                                	| On, off                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      	|
+| -n      	| Alert recipient name                                            	| String                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	|
+| -e      	| Alert recipient email address                                   	| Valid email address                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          	|
+| -ip     	| Syslog IP address or hostname                                   	| Valid IP address or hostname                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 	|
+| -pn     	| Syslog port number                                              	| Valid port number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            	|
+| -del    	| Delete specified recipient index number                         	|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              	|
+| -test   	| Generate a test alert to specified recipient index number       	|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              	|
+| -crt    	| Sets critical events that  send alerts                          	| All, none, custom:te|vo|po|di|fa|cp|me|in|re|ot Custom critical alert settings are specified using a pipe separated list of values of the form alertentries -crt custom:te|vo, where custom values are: - te: critical temperature threshold exceeded - vo: critical voltage threshold exceeded - po: critical power failure - di: hard disk drive failure - fa: fan failure - cp: microprocessor failure - me: memory failure - in: hardware incompatibility - re: power redundancy failure - ot: all other critical events 	|
 
 
-
-+--------+---------------------+----------------------------------------------------------------------------+
-| Option | Description         | Values                                                                     |
-+--------+---------------------+----------------------------------------------------------------------------+
-| -crten | Send critical event | Enabled, disabled                                                          |
-|        | alerts              |                                                                            |
-+--------+---------------------+----------------------------------------------------------------------------+
-| -wrn   | Sets warning events | All, none, custom:rp|te|vo|po|fa|cp|me|ot                                  |
-|        | that send alerts    | Custom warning alert settings are specified using a                        |
-|        |                     | pipe separated list of values of the form alertentries                     |
-|        |                     |                                                                            |
-|        |                     |                                                                            |
-|        |                     | - wrn custom:rp|te, where custom values are:- rp: power redundancy warning |
-|        |                     | - te: warning temperature threshold exceeded                               |
-|        |                     | - vo: warning voltage threshold exceeded                                   |
-|        |                     | - po: warning power threshold exceeded                                     |
-|        |                     | - fa: non-critical fan event                                               |
-|        |                     | - cp: microprocessor in degraded state                                     |
-|        |                     | - me: memory warning                                                       |
-|        |                     |                                                                            |
-|        |                     | - ot: all other warning events                                             |
-+--------+---------------------+----------------------------------------------------------------------------+
-| -wrnen | Send warning event  | Enabled, disabled                                                          |
-|        | alerts              |                                                                            |
-+--------+---------------------+----------------------------------------------------------------------------+
-| -sys   | Sets routine events | All, none, custom:lo|tio|ot|po|bf|til|pf|el|ne                             |
-|        | that send alerts    | Custom routine alert settings are specified using a                        |
-|        |                     | pipe separated list of values of the form alertentries                     |
-|        |                     | -sys custom:lo|tio, where custom values are:                               |
-|        |                     | - lo: successful remote login                                              |
-|        |                     | - tio: operating system timeout                                            |
-|        |                     | - ot: all other informational and system events                            |
-|        |                     | - po: system power on/off                                                  |
-|        |                     | - bf: operating system boot failure                                        |
-|        |                     | - til: operating system loader watchdog timeout                            |
-|        |                     | - pf: predicted failure (PFA)                                              |
-|        |                     | - el: event log 75% full                                                   |
-|        |                     | - ne: network change                                                       |
-+--------+---------------------+----------------------------------------------------------------------------+
-| -sysen | Send routine event  | Enabled, disabled                                                          |
-|        | alerts              |                                                                            |
-+--------+---------------------+----------------------------------------------------------------------------+
 
 
 | Option 	| Description                          	| Values                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         	|
