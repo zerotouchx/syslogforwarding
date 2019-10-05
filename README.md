@@ -9,6 +9,8 @@ With the ansible ad-hoc command below you can set the syslog forwarding without 
 ansible <Blade Servers/Blade Server Groups> -i <inventory> -m raw -a "alertentries -1 -type syslog -status on -n syslogForwarding -ip <central syslog server> -pn 514 -crt all -crten enabled -wrn all -wrnen enabled -sys all -sysen enabled" -u USERID --ask-pass
 ```
 
+**Do not forget to modify the fields with brackets (<>) in accordance with your environment.**
+
 
 [**Reference:** <em>All the information below taken from the URL</em>] ftp://ftp.software.ibm.com/systems/support/system_x_pdf/88y7599.pdf
 
